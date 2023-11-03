@@ -1,3 +1,3 @@
 # magento-study
 
-!!! Without node_modules and vendor libs.
+!!! Without node_modules and vendor files.
