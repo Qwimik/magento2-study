@@ -1,0 +1,28 @@
+<div id="customTabs">
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <h2>Tab 1</h2>
+        </div>
+        <div data-role="content">
+            <?php include($block->getTemplateFile('Magento_Theme::tab1.phtml')) ?>
+        </div>
+    </div>
+
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <h2>Tab 2</h2>
+        </div>
+        <div data-role="content">
+            <?php include($block->getTemplateFile('Magento_Theme::btn.phtml')) ?>
+        </div>
+    </div>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'accordion'
+    ], function($) {
+        $("#customTabs").accordion();
+    });
+</script>

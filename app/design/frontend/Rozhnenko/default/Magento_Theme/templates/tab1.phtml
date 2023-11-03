@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @var Magento\Framework\View\Element\Template $block
+ * @var Magento\Framework\Escaper $escaper
+ */
+
+
+$title = __('Text in "default_custom.phtml" - template #1');
+?>
+
+<div class="carousel">
+    <p><?= $escaper->escapeHtml($title) ?></p>
+    <?php include($block->getTemplateFile('Magento_Theme::tab2.phtml')) ?>
+    <p>Slide 3 Lorem ipsum dolor sit amet consectetur.</p>
+    <p>Slide 4 Lorem ipsum dolor sit amet consectetur.</p>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'slick'
+    ], function($) {
+        $(".carousel").slick({
+            dots: true,
+            arrows: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+        });
+    });
+</script>

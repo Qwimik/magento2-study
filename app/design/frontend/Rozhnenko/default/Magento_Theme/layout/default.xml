@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceContainer name="content">
+			<block class="Magento\Framework\View\Element\Template" name="custom.tab.container" template="Magento_Theme::custom_tab.phtml" />
+			<block class="Magento\Cms\Block\Block" name="custom_cms_block">
+				<arguments>
+					<argument name="block_id" xsi:type="string">
+						customCmsBlock
+					</argument>
+				</arguments>
+			</block>
+		</referenceContainer>
+		<referenceContainer name="content">
+			<block name="custom.block" template="Magento_Theme::custom.phtml" />
+		</referenceContainer>
+		<move element="top.search" destination="header.panel" after="top.links" />
+		<move element="minicart" destination="header.panel" before="top.links" />
+	</body>
+</page>
