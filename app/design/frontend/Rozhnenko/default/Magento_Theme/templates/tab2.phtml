@@ -1,12 +1,11 @@
-<?php 
+<?php
+
 /**
  * @var Magento\Framework\View\Element\Template $block
  * @var Magento\Framework\Escaper $escaper
  */
 
-
-$title = __('Text in "custom2.phtml" - template #2');
 ?>
 
-<p><?= $escaper->escapeHtml($title) ?></p>
+<?php include($block->getTemplateFile('Magento_Theme::btn.phtml')) ?>
 
