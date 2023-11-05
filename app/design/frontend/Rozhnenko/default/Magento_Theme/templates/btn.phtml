@@ -1,31 +1,16 @@
+<?php
+/**
+ * @var Magento\Framework\View\Element\Template $block
+ * @var Magento\Framework\Escaper $escaper
+ */
+?>
+
 <button id="openPopup">Open Popup</button>
 
 <div id="popupContainer">
-    <?php include($block->getTemplateFile('Magento_Theme::popup.phtml')) ?>
+    <?php include($block->getTemplateFile('Magento_Theme::tab1.phtml')) ?>
 </div>
 
 <script>
-    require([
-        'jquery',
-        'Magento_Ui/js/modal/modal'
-    ], function($, modal) {
-        var options = {
-            type: 'popup',
-            responsive: true,
-            innerScroll: true,
-            title: 'Title',
-            buttons: [{
-                text: $.mage.__('Закрити'),
-                class: 'action primary',
-                click: function() {
-                    this.closeModal();
-                }
-            }]
-        };
-
-        var popup = modal(options, $('#popupContainer'));
-        $("#openPopup").on('click', function() {
-            $('#popupContainer').modal('openModal');
-        });
-    });
+    require(['btn']);
 </script>

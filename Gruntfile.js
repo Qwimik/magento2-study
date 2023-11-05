@@ -45,7 +45,7 @@ module.exports = function (grunt) {
              */
             default: function () {
                 grunt.log.subhead(
-                    "I'm default task and at the moment I'm empty, sorry :/"
+                    "I'm default task and at the moment I'm empty, sorry :/",
                 );
             },
 
@@ -53,15 +53,15 @@ module.exports = function (grunt) {
              * Production preparation task.
              */
             prod: function (component) {
-                var tasks = ["less", "cssmin", "usebanner"].map(function (
-                    task
-                ) {
-                    return task + ":" + component;
-                });
+                var tasks = ["less", "cssmin", "usebanner"].map(
+                    function (task) {
+                        return task + ":" + component;
+                    },
+                );
 
                 if (typeof component === "undefined") {
                     grunt.log.subhead(
-                        "Tip: Please make sure that u specify prod subtask. By default prod task do nothing"
+                        "Tip: Please make sure that u specify prod subtask. By default prod task do nothing",
                     );
                 } else {
                     grunt.task.run(tasks);
@@ -105,7 +105,7 @@ module.exports = function (grunt) {
         },
         function (task, name) {
             grunt.registerTask(name, task);
-        }
+        },
     );
 
     grunt.registerTask("compile", [

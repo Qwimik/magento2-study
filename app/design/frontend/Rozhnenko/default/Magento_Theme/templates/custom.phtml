@@ -1,45 +1,10 @@
 <?php
-
 /**
  * @var Magento\Framework\View\Element\Template $block
  * @var Magento\Framework\Escaper $escaper
  */
-
 ?>
 
-<!-- 1 спосіб  -->
-<!-- <div data-mage-init='{"Magento_Theme/js/custom":{}}'></div> -->
-
-<!-- 2 спосіб  -->
-<!-- <div id="custom_script"></div>
-<script type="text/x-magento-init">
-    {
-        "#custom_script": {
-            "Magento_Theme/js/custom" : {}
-        }
-    }
-</script> -->
-
-<!-- 3 спосіб  -->
-<!-- <script type="text/x-magento-init">
-    {
-        "*": {
-            "Magento_Theme/js/custom" : {}
-        }
-    }
-</script> -->
-
-<!-- <script>
-    require(['Magento_Theme/js/dep1', 'Magento_Theme/js/dep2', 'Magento_Theme/js/dep3'], function () {
-        console.log('after deps');
-    })
-</script> 
-    Вивід хаотичний, не послідовний
--->
-
-<script>
-    require(['Magento_Theme/js/custom']);
-</script>
-<!--  
-    У файлі використовуємо define, то послідовність зберігається
--->
+<pre>
+    <?php print_r($block->getLayout()->getUpdate()->getHandles(), false) ?>
+</pre>
