@@ -1,39 +1,26 @@
-<?php
-
-/**
- * @var Magento\Framework\View\Element\Template $block
- * @var Magento\Framework\Escaper $escaper
- */
-
-?>
-
-<div class="carousel">
-    <img src="https://picsum.photos/900/900?random=1" alt="picsum" />
-    <img src="https://picsum.photos/900/900?random=2" alt="picsum" />
-    <img src="https://picsum.photos/900/900?random=3" alt="picsum" />
-    <img src="https://picsum.photos/900/900?random=4" alt="picsum" />
-    <img src="https://picsum.photos/900/900?random=5" alt="picsum" />
-    <img src="https://picsum.photos/900/900?random=6" alt="picsum" />
+<div class="tab1_container">
+    <div class="custom-slick">
+        <div>
+            <img src="https://picsum.photos/600/600?random=1" alt="picsum" />
+        </div>
+        <div>
+            <img src="https://picsum.photos/600/600?random=2" alt="picsum" />
+        </div>
+        <div>
+            <img src="https://picsum.photos/600/600?random=3" alt="picsum" />
+        </div>
+        <div>
+            <img src="https://picsum.photos/600/600?random=4" alt="picsum" />
+        </div>
+        <div>
+            <img src="https://picsum.photos/600/600?random=5" alt="picsum" />
+        </div>
+        <div>
+            <img src="https://picsum.photos/600/600?random=6" alt="picsum" />
+        </div>
+    </div>
 </div>
 
 <script>
-    require([
-        'jquery',
-        'slick'
-    ], function($) {
-        $(".carousel").slick({
-            dots: true,
-            arrows: false,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-        });
-
-        $('.slick-slider').css('width', '900px');
-        $('.slick-dots').css({
-            'display': 'flex',
-            'flex-direction': 'column',
-            'gap': '5px',
-        });
-        $('.slick-slider').slick('setPosition');
-    });
+    require(['tab1']);
 </script>
