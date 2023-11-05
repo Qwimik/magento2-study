@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<page
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+      layout="3columns"
+>
+    <referenceContainer name="sidebar.main">
+        <block class="Magento\Framework\View\Element\Template" name="template3" template="Magento_Theme::template3.phtml">
+        </block>
+    </referenceContainer>
+
+    <referenceContainer name="content">
+        <block class="Magento\Framework\View\Element\Template" name="template1" template="Magento_Theme::template1.phtml">
+            <block class="Magento\Cms\Block\Block" name="custom_phtml_block">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">custom_phtml_block</argument>
+                </arguments>
+            </block>
+        </block>
+    </referenceContainer>
+
+    <referenceBlock name="wishlist_sidebar" remove="true"/>
+    <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+
+    <referenceContainer name="sidebar.additional">
+        <block class="Magento\Framework\View\Element\Template" name="custom2" template="Magento_Theme::template2.phtml">
+            <block class="Magento\Cms\Block\Block" name="custom_phtml_block2">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">custom_phtml_block2</argument>
+                </arguments>
+            </block>
+        </block>
+    </referenceContainer>
+</page>

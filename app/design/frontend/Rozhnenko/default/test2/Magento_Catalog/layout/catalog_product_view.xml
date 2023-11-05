@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <move element="page.main.title" destination="product.info.main" before="-"/>
+        <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
+        <move element="product.info.overview" destination="product.info.main" after="page.main.title"/>
+        <move element="breadcrumbs" destination="page.top" after="navigation.sections"/>
+        <move element="product.attributes" destination="product.info.main" after="page.main.title" />
+
+
+        <referenceBlock name="product.info.stock.sku" remove="true"/>
+        <referenceBlock name="product.price.final" remove="true"/>
+        <referenceBlock name="product.info.review" remove="true"/>
+        <referenceBlock name="product.info.details">
+            <block class="Magento\Catalog\Block\Product\View" name="customtab.tab" as="customtab" template="Magento_Catalog::product/customtab.phtml" group="detailed_info" >
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Custom Tab</argument>
+                </arguments>
+                    <block class="Magento\Cms\Block\Block" name="custom_phtml_block">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">custom_phtml_block</argument>
+                        </arguments>
+                    </block>
+            </block>
+        </referenceBlock>
+        <move element="catalog.product.related" destination="product.info.details" />
+    </body>
+</page>
