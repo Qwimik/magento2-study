@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+>
+    <body>
+        <referenceContainer name="content">
+            <container name="product.custom.container" htmlTag="div" htmlClass="product-custom-container" />
+        </referenceContainer>
+
+        <referenceBlock name="product.info.details">
+            <block class="Magento\Catalog\Block\Product\View" name="customtab.tab" template="Magento_Theme::tab2.phtml" group="detailed_info" >
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Custom Tab</argument>
+                </arguments>
+                <block name="custom_phtml_block" template="Magento_Theme::tab2.phtml" />
+            </block>
+        </referenceBlock>
+
+        <move element="product.info.stock.sku" destination="product.custom.container" before="-" />
+        <move element="product.info.media" destination="product.custom.container" before="product.info.main" />
+        <move element="product.info.main" destination="product.custom.container"/>
+        <move element="product.custom.container" destination="content" before="-"/>
+        <move element="product.price.final" destination="product.info.options.wrapper.bottom" before="-"/>
+    </body>
+</page>
